@@ -15,44 +15,17 @@
 
 
 
-<meta name="description" content="Dillinger
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
-
-Type some Markdown on the left
-See HTML in the right
-Magic
-
-You can also:
-
-Import and">
+<meta name="description" content="生命在于折腾">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo guthub 博客使用教程">
 <meta property="og:url" content="http://yaobin.xyz/2016/09/26/helloworld/index.html">
 <meta property="og:site_name" content="Blaine.Yao">
-<meta property="og:description" content="Dillinger
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
-
-Type some Markdown on the left
-See HTML in the right
-Magic
-
-You can also:
-
-Import and">
+<meta property="og:description" content="生命在于折腾">
 <meta property="og:image" content="https://cldup.com/dTxpPi9lDf.thumb.png">
-<meta property="og:updated_time" content="2016-10-06T11:46:13.707Z">
+<meta property="og:updated_time" content="2016-10-06T12:06:50.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo guthub 博客使用教程">
-<meta name="twitter:description" content="Dillinger
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
-
-Type some Markdown on the left
-See HTML in the right
-Magic
-
-You can also:
-
-Import and">
+<meta name="twitter:description" content="生命在于折腾">
 <meta name="twitter:image" content="https://cldup.com/dTxpPi9lDf.thumb.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -101,12 +74,14 @@ Import and">
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -133,6 +108,13 @@ Import and">
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -210,7 +192,7 @@ Import and">
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo使用/">hexo使用</a></li></ul>
                     </div>
                 </section>
                 
@@ -314,6 +296,10 @@ Import and">
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo使用/">hexo使用</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -321,8 +307,7 @@ Import and">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <a id="more"></a>
-<h1 id="Dillinger"><a href="#Dillinger" class="headerlink" title="Dillinger"></a>Dillinger</h1><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="external"><img src="https://cldup.com/dTxpPi9lDf.thumb.png" alt="N|Solid"></a></p>
+        <h1 id="Dillinger"><a href="#Dillinger" class="headerlink" title="Dillinger"></a>Dillinger</h1><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="external"><img src="https://cldup.com/dTxpPi9lDf.thumb.png" alt="N|Solid"></a></p>
 <p>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
 <ul>
 <li>Type some Markdown on the left</li>
@@ -411,7 +396,7 @@ Import and">
         <p><span>本文标题:</span><a href="/2016/09/26/helloworld/">hexo guthub 博客使用教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Blaine</a></p>
         <p><span>发布时间:</span>2016-09-26, 11:12:36</p>
-        <p><span>最后更新:</span>2016-10-06, 19:46:13</p>
+        <p><span>最后更新:</span>2016-10-06, 20:06:50</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/09/26/helloworld/" title="hexo guthub 博客使用教程">http://yaobin.xyz/2016/09/26/helloworld/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yaobin.xyz/2016/09/26/helloworld/　　作者: Blaine" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -559,22 +544,6 @@ Import and">
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
 
 
 
