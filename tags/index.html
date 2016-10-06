@@ -413,7 +413,7 @@
     <div id="comment-box" ></div>
     <div class="ds-thread" id="ds-thread" data-thread-key="tags/index.html" data-title="tags" data-url="http://yaobin.xyz/tags/index.html"></div>
     <script>
-        var duoshuoQuery = {short_name:"null"};
+        var duoshuoQuery = {short_name:"blaineyao"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
             s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
@@ -424,7 +424,7 @@
         
             // Add comment count
             $(function(){ 
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=null&threads=tags/index.html&callback=?";
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=blaineyao&threads=tags/index.html&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
                         var value = field.comments;

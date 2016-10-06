@@ -456,7 +456,7 @@
     <div id="comment-box" ></div>
     <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/26/helloworld/" data-title="hexo guthub 博客使用教程" data-url="http://yaobin.xyz/2016/09/26/helloworld/"></div>
     <script>
-        var duoshuoQuery = {short_name:"null"};
+        var duoshuoQuery = {short_name:"blaineyao"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
             s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
@@ -467,7 +467,7 @@
         
             // Add comment count
             $(function(){ 
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=null&threads=2016/09/26/helloworld/&callback=?";
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=blaineyao&threads=2016/09/26/helloworld/&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
                         var value = field.comments;
