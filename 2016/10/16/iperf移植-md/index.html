@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="在围城里向外看">
 <meta property="og:description" content="物联网的一些介绍及6Lowpan中iperf移植">
 <meta property="og:image" content="http://yaobin.xyz/img/1.png">
-<meta property="og:updated_time" content="2016-11-16T16:56:13.098Z">
+<meta property="og:updated_time" content="2016-11-17T15:00:43.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOT及6Lowpan中iperf移植">
 <meta name="twitter:description" content="物联网的一些介绍及6Lowpan中iperf移植">
@@ -325,7 +325,7 @@
 <hr>
 <h1 id="Iperf移植"><a href="#Iperf移植" class="headerlink" title="Iperf移植"></a>Iperf移植</h1><p><a href="https://iperf.fr/" target="_blank" rel="external">Iperf</a>是一个网络性能测试工具，可以测试最大TCP和UDP带宽性能。原来的iperf只支持linux和windows平台。用来测试两台pc之间的带宽。但是在上述的IOT框架中，云端的server至IOT的节点之间是linux&lt;—-&gt;tinyos之间的链路。为此必须将iperf移植到tinyos上面，才可以测试两者之间的带宽。 </p>
 <blockquote>
-<p>这里想特别说明一下，虽然我还是本硕阶段都是跟通信网络相关的，但还是要鄙视一下自己，之前一直知道带宽的概念原理，但是一直没能和实际工程上面将结合的很好。我们在用unix的posix socket api时知道，send/write都是支持同步阻塞or非阻塞的方式，其实如果我们在应用层写业务不注意的话，有一种情况会发生<br>\begin{equation}\begin{split} a&amp;=b+c-d\<br>&amp;\quad +e-f\<br>&amp;=g+h\<br>&amp; =i<br>\end{split}\end{equation}</p>
+<p>这里想特别说明一下，虽然我还是本硕阶段都是跟通信网络相关的，但还是要鄙视一下自己，之前一直知道带宽的概念原理，但是一直没能和实际工程上面将结合的很好。我们在用unix的posix socket api时知道，send/write都是支持同步阻塞or非阻塞的方式，其实如果我们在应用层写业务不注意的话，有一种情况会发生,就是前后两次调用send()时，虽然返回值返回表示发出的字节数，但是，实际上，这不是对方实际接收到的数据字节数。所以，这个时候提出带宽的概念。带宽的单位是$bit/s$,对其取倒数，即$s/bit$，表示发送一个bit or byte需要的时间s。其实这就表示在应用层，我们调用两次send的前后时间间隔，不够在如今的网速下，一般情况在业务层其实不需要太关注，但是当网速比较低时，这其实影响就大了，我们只要在业务层适当的控制调用send间隔，可以很好的控制丢包率。。。</p>
 </blockquote>
 
       
@@ -338,7 +338,7 @@
         <p><span>本文标题:</span><a href="/2016/10/16/iperf移植-md/">IOT及6Lowpan中iperf移植</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">blaine.yao</a></p>
         <p><span>发布时间:</span>2016-10-16, 16:53:47</p>
-        <p><span>最后更新:</span>2016-11-17, 00:56:13</p>
+        <p><span>最后更新:</span>2016-11-17, 23:00:43</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/16/iperf移植-md/" title="IOT及6Lowpan中iperf移植">http://yaobin.xyz/2016/10/16/iperf移植-md/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yaobin.xyz/2016/10/16/iperf移植-md/　　作者: blaine.yao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
